@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "ms-migrate-cli"
+version = "0.1.0"
+description = "CLI for migrating Meraki switch device configuration using the Dashboard API"
+authors = ["Byron A. Jones <jones.byron@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "ms_migrate_cli" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+meraki = "^1.27.0"
+click = "^8.1.3"
+
+[tool.poetry.scripts]
+ms-device = "ms_migrate_cli.ms_device:cli"
+
+[tool.poetry.dev-dependencies]
+ruff = "^0.3.5"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+
+[tool.ruff.lint]
+# Enable all `pydocstyle` rules, limiting to those that adhere to the NumPy convention via `convention = "numpy"`, below
+select = ["D"]
+
+ignore = [
+    "D301",  # disable `D301`, which requires use of r""" if any backslashes are present in a docstring
+    "D417",  # disable `D417`, which requires documentation for every function parameter
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

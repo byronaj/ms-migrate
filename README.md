@@ -1,8 +1,8 @@
 [![Python 3.11](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3123/)
 
-# ms-migrate-cli
+# ms-migrate
 
-Command line tool for migrating Meraki switch configurations.
+Meraki switch migration CLI.
 
 
 ## Requirements

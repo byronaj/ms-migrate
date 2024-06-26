@@ -27,16 +27,14 @@ quote-style = "single"
 indent-style = "space"
 
 [tool.ruff.lint]
-# Enable all `pydocstyle` rules, limiting to those that adhere to the NumPy convention via `convention = "numpy"`, below
-select = ["D"]
-
+select = ["D"]  # Enable all `pydocstyle` rules
 ignore = [
     "D301",  # disable `D301`, which requires use of r""" if any backslashes are present in a docstring
     "D417",  # disable `D417`, which requires documentation for every function parameter
 ]
 
 [tool.ruff.lint.pydocstyle]
-convention = "numpy"
+convention = "numpy"  # Limit `pydocstyle` rules to those that adhere to the NumPy convention
 
 [build-system]
 requires = ["poetry-core"]
